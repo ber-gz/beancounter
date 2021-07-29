@@ -109,7 +109,7 @@ func (d *AddressDeriver) Derive(change uint32, addressIndex uint32) *Address {
 		}
 	}
 
-	path := fmt.Sprintf("m/.../%d/%d", change, addressIndex)
+	path := fmt.Sprintf("m/0/%d", addressIndex)
 	addr := &Address{path: path, net: d.network, change: change, addrIndex: addressIndex}
 	if len(d.xpubs) == 1 {
 		addr.addr = d.singleDerive(change, addressIndex)
